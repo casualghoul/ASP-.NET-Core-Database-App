@@ -152,11 +152,12 @@ namespace IS_460_Assignment_2_Andrew_Horton.Controllers
         }
 
         //POST: /Students/FindDetail
-        //Takes the StudentID as an argument, finds the record, and returns that student's "Edit" view
+        //Takes the StudentID as an argument, finds the record, and returns that student's "Detail" view
         [HttpPost]
         public async Task<IActionResult> FindDetail(string? StudentID)
         {
-            if(StudentID == null)
+            //If the user enters no StudentID, return the "Not Found" page
+            if (StudentID == null)
             {
                 return NotFound();
             }
@@ -164,7 +165,13 @@ namespace IS_460_Assignment_2_Andrew_Horton.Controllers
             var student = await _context.Student
                      .FirstOrDefaultAsync(m => m.StudentID == StudentID);
 
-            return View("Edit", student);
+            //If the user enters in a StudentID that does not exist, return the "Not Found" page
+            if(student == null)
+            {
+                return NotFound();
+            }
+
+            return View("Details", student);
         }
 
         private bool StudentExists(string id)
