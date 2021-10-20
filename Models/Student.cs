@@ -12,7 +12,7 @@ namespace IS_460_Assignment_2_Andrew_Horton.Models
     {
 
         [Required(ErrorMessage = "StudentID is required")]
-        [RegularExpression (@"N\d{8}")]
+        [RegularExpression (@"N\d{8}", ErrorMessage = "StudentID must match the pattern Nxxxxxxxx")]
         public string StudentID { get; set; }
 
         [Required(ErrorMessage = "LastName is required")]
@@ -22,7 +22,6 @@ namespace IS_460_Assignment_2_Andrew_Horton.Models
         [Required(ErrorMessage = "FirstName is required")]
         [StringLength(20, ErrorMessage = "FirstName must be less than 20 characters")]
         public string FirstName { get; set; }
-
 
         public int? CreditsEarned { get; set; }
 

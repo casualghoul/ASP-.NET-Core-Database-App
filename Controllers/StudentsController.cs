@@ -46,7 +46,10 @@ namespace IS_460_Assignment_2_Andrew_Horton.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            return View();
+
+            Models.Student s = new Models.Student();
+
+            return View("Create", s);
         }
 
         // POST: Students/Create
@@ -141,9 +144,33 @@ namespace IS_460_Assignment_2_Andrew_Horton.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //GET: /Students/FindDetail
+        [HttpGet]
+        public IActionResult FindDetail()
+        {
+            return View();
+        }
+
+        //POST: /Students/FindDetail
+        //Takes the StudentID as an argument, finds the record, and returns that student's "Edit" view
+        [HttpPost]
+        public async Task<IActionResult> FindDetail(int? StudentID)
+        {
+            if(StudentID == null)
+            {
+                return NotFound();
+            }
+
+            var student = await _context.Student
+                     .FirstOrDefaultAsync(m => m.StudentID == StudentID);
+
+            return View("Edit", student);
+        }
+
         private bool StudentExists(string id)
         {
             return _context.Student.Any(e => e.StudentID == id);
         }
+
     }
 }
