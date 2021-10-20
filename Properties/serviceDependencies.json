@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:IS_460_Assignment_2_Andrew_HortonContext"
+    }
+  }
+}
