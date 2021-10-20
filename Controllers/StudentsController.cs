@@ -154,7 +154,7 @@ namespace IS_460_Assignment_2_Andrew_Horton.Controllers
         //POST: /Students/FindDetail
         //Takes the StudentID as an argument, finds the record, and returns that student's "Edit" view
         [HttpPost]
-        public async Task<IActionResult> FindDetail(int? StudentID)
+        public async Task<IActionResult> FindDetail(string? StudentID)
         {
             if(StudentID == null)
             {
