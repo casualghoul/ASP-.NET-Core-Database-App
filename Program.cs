@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using IS_460_Assignment_2_Andrew_Horton.Data;
 
 namespace IS_460_Assignment_2_Andrew_Horton
 {
@@ -13,7 +15,15 @@ namespace IS_460_Assignment_2_Andrew_Horton
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = CreateHostBuilder(args).Build();
+
+            var scope = host.Services.CreateScope();
+            var services = scope.ServiceProvider;
+            var context = services.GetRequiredService<IS_460_Assignment_2_Andrew_HortonContext>();
+            IS_460_Assignment_2_Andrew_HortonContext.CreateSampleData.Initialize(services);
+
+            host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

@@ -10,7 +10,7 @@ namespace IS_460_Assignment_2_Andrew_Horton.Models
 {
     public class Student
     {
-
+        [Key]
         [Required(ErrorMessage = "StudentID is required")]
         [RegularExpression (@"N\d{8}", ErrorMessage = "StudentID must match the pattern Nxxxxxxxx")]
         [Display (Name ="Student ID", Prompt ="Enter a Student ID: Nxxxxxxxx", Description = "Unique Student Identifier")]

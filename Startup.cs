@@ -26,8 +26,7 @@ namespace IS_460_Assignment_2_Andrew_Horton
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<IS_460_Assignment_2_Andrew_HortonContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("IS_460_Assignment_2_Andrew_HortonContext")));
+            services.AddDbContext<IS_460_Assignment_2_Andrew_HortonContext>(options => options.UseInMemoryDatabase(databaseName: "Students"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
