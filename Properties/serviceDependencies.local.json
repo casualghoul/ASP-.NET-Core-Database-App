@@ -3,6 +3,10 @@
     "mssql1": {
       "type": "mssql.local",
       "connectionId": "ConnectionStrings:IS_460_Assignment_2_Andrew_HortonContext"
+    },
+    "mssql2": {
+      "type": "mssql.local",
+      "connectionId": "ConnectionStrings:IS_460_Assignment_3_Andrew_HortonContext"
     }
   }
 }

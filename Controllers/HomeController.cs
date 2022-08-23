@@ -1,4 +1,4 @@
-﻿using IS_460_Assignment_2_Andrew_Horton.Models;
+﻿using IS_460_Assignment_3_Andrew_Horton.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IS_460_Assignment_2_Andrew_Horton.Controllers
+namespace IS_460_Assignment_3_Andrew_Horton.Controllers
 {
     public class HomeController : Controller
     {

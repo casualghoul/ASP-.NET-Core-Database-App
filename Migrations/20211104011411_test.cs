@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace IS_460_Assignment_2_Andrew_Horton.Migrations
+namespace IS_460_Assignment_3_Andrew_Horton.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace IS_460_Assignment_2_Andrew_Horton.Models
+namespace IS_460_Assignment_3_Andrew_Horton.Models
 {
     public class Student
     {
